@@ -8,6 +8,9 @@
   "scripts": {
     "test": "standard --fix && node example.js"
   },
+  "bin": {
+    "named-port": " node bin/named-port.js"
+  },
   "devDependencies": {
     "standard": "^17.0.0"
   }
