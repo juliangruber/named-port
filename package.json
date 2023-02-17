@@ -1,6 +1,6 @@
 {
   "name": "named-port",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": "juliangruber/named-port",
   "description": "Deterministically map service names to port numbers",
