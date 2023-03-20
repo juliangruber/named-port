@@ -2,4 +2,4 @@
 
 import namedPort from '../index.js'
 
-console.log(namedPort(process.argv[2]))
+console.log(namedPort(process.argv.slice(2).join(' ')))

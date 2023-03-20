@@ -6,12 +6,13 @@
   "description": "Deterministically map service names to port numbers",
   "type": "module",
   "scripts": {
-    "test": "standard --fix && node example.js"
+    "test": "standard --fix && node--test"
   },
   "bin": {
     "named-port": " node bin/named-port.js"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "test": "^3.3.0"
   }
 }

@@ -1,7 +1,11 @@
+import crypto from 'node:crypto'
+
+const min = 1024
+const max = 65535
+
 const namedPort = (str) => {
-  const min = 1024
-  const max = 65535
-  const n = str.split('').reduce((a, b) => a + b.charCodeAt(0), 0)
+  const hash = crypto.createHash('sha512').update(str).digest()
+  const n = hash.reduce((a, b) => a + b, 0)
   return min + n % (max - min)
 }
 
