@@ -14,3 +14,9 @@ import namedPort from 'named-port'
 
 console.log(namedPort('Filecoin Station Core'))
 ```
+
+## Algorithm
+
+```
+port = min + H(name) % (max - min)
+```
