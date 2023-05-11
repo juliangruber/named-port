@@ -5,6 +5,7 @@
   "repository": "juliangruber/named-port",
   "description": "Deterministically map service names to port numbers",
   "type": "module",
+  "types": "index.d.ts",
   "scripts": {
     "test": "standard --fix && node--test"
   },
