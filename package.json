@@ -9,11 +9,6 @@
     "test": "standard --fix && node--test"
   },
   "bin": "bin/named-port.js",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "bin"
-  ],
   "devDependencies": {
     "standard": "^17.0.0",
     "test": "^3.3.0"
