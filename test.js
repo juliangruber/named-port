@@ -1,6 +1,6 @@
-import assert from 'node:assert'
-import test from 'test'
+import test from 'node:test'
 import namedPort from './index.js'
+import assert from 'node:assert'
 
 const MIN = 1024
 const MAX = 65535
