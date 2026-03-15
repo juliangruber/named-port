@@ -23,6 +23,10 @@ test('port is within custom range', () => {
   assert.ok(port <= max)
 })
 
+test('throw error when min >= max', () => {
+  assert.throws(() => { namedPort('project', { min: 10, max: 1 }) })
+})
+
 test('same string outputs same port', () => {
   const a = namedPort('project')
   const b = namedPort('project')
