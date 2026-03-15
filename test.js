@@ -4,7 +4,7 @@ import namedPort from './index.js'
 import { MAX, MIN } from './constants.js'
 
 test('named port', () => {
-  assert.strictEqual(namedPort('Filecoin Station Core'), 7834)
+  assert.strictEqual(namedPort('Filecoin Station Core'), 51806)
 })
 
 test('port is within default range', () => {
@@ -19,6 +19,15 @@ test('port is within custom range', () => {
   const port = namedPort('project', { min, max })
   assert.ok(port >= min)
   assert.ok(port <= max)
+})
+
+test('range is inclusive', () => {
+  const min = 10
+  const max = 12
+  const results = new Set(['a', 'b', 'c', 'd', 'e', 'f'].map(str => namedPort(str, { min, max })))
+  assert.strictEqual(results.size, max - min + 1)
+  assert.ok(results.has(min))
+  assert.ok(results.has(max))
 })
 
 test('throw error when min >= max', () => {
