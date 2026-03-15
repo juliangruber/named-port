@@ -1,9 +1,7 @@
 import crypto from 'node:crypto'
 
-const min = 1024
-const max = 65535
-
-const namedPort = (str) => {
+const namedPort = (str, options) => {
+  const { min = 1024, max = 65535 } = options ?? {}
   // TODO: sha512 isn't big enough to cover the full port range
   const hash = crypto.createHash('sha512').update(str).digest()
   const n = hash.reduce((a, b) => a + b, 0)

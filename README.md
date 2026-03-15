@@ -15,6 +15,12 @@ import namedPort from 'named-port'
 console.log(namedPort('Filecoin Station Core'))
 ```
 
+### Custom port range
+
+```js
+console.log(namedPort('Filecoin Station Core', { min: 3000, max: 10000 }))
+```
+
 ## Algorithm
 
 ```
