@@ -1,4 +1,4 @@
-import test from 'test'
+import test from 'node:test'
 import namedPort from './index.js'
 import assert from 'node:assert'
 
