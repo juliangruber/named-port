@@ -7,7 +7,7 @@
   "type": "module",
   "types": "index.d.ts",
   "scripts": {
-    "test": "standard --fix && node--test"
+    "test": "standard --fix && node --test"
   },
   "bin": "bin/named-port.js",
   "devDependencies": {
