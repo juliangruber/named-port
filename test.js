@@ -1,15 +1,28 @@
+import assert from 'node:assert'
 import test from 'node:test'
 import namedPort from './index.js'
-import assert from 'node:assert'
+import { MAX, MIN } from './constants.js'
 
 test('named port', () => {
   assert.strictEqual(namedPort('Filecoin Station Core'), 7834)
 })
 
-test('port is within range', () => {
+test('port is within default range', () => {
   const port = namedPort('project')
   assert.ok(port >= MIN)
   assert.ok(port <= MAX)
+})
+
+test('port is within custom range', () => {
+  const min = 3000
+  const max = 10000
+  const port = namedPort('project', { min, max })
+  assert.ok(port >= min)
+  assert.ok(port <= max)
+})
+
+test('throw error when min >= max', () => {
+  assert.throws(() => { namedPort('project', { min: 10, max: 1 }) })
 })
 
 test('same string outputs same port', () => {
