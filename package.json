@@ -5,7 +5,12 @@
   "repository": "juliangruber/named-port",
   "description": "Deterministically map service names to port numbers",
   "type": "module",
-  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
   "engines": {
     "node": ">=20"
   },
