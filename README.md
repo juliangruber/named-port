@@ -6,7 +6,7 @@ Deterministically map service names to port numbers `(1024,65535)`.
 
 ```bash
 $ npx named-port Filecoin Station Core
-7834
+51806
 ```
 
 ```js
@@ -24,5 +24,9 @@ console.log(namedPort('Filecoin Station Core', { min: 3000, max: 10000 }))
 ## Algorithm
 
 ```
-port = min + H(name) % (max - min)
+port = min + H(name) % (max - min + 1)
 ```
+
+- `H(name)`: `hash = 0; for each char c: hash = (hash * 31 + c.charCodeAt(0)) >>> 0`
+- `31`: prime multiplier for even distribution
+- `>>> 0`: 32-bit unsigned overflow handling
